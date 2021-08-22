@@ -66,7 +66,7 @@ app.post("/create", (req, res) => {
     );
   });
 
-  /*app.get("/columnnames", (req, res) => {
+  /* {
     const sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS " +
           "WHERE TABLE_SCHEMA = 'react_sql' AND TABLE_NAME = 'employees'" +
            " ORDER BY ORDINAL_POSITION"

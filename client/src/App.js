@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import {useState} from 'react';
+import {useStatae} from 'react';
 import axios from 'axios';
 import ComponentC from './ComponentC';
 
 
-//export const UserContext = React.createContext()
+//export const UserContext = React.createContext() //stuff
 export const ColumnNames = React.createContext()
 
 function App() {
