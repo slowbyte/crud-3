@@ -23,9 +23,20 @@ label{
   font-style: italic;
   margin-left: 100px;
 }
-button {
-   margin-top: 30px;
-   margin-left: 100px;
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+ 
+  width: 700px;
+  border: 2px solid darkblue;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+button {         
    font-size: 1.3rem;
    width: 180px;
    height: 3rem;

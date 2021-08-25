@@ -1,0 +1,21 @@
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 2rem;
+    border: 2px solid white;
+    background-color: black;
+    color:white;
+}
+.rowscontainer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 2rem;
+    border: 2px solid white;
+    background-color: black;
+    color:white;
+}

@@ -7,6 +7,7 @@ import ComponentC from './ComponentC';
 
 //export const UserContext = React.createContext() //stuff
 export const ColumnNames = React.createContext()
+export const RowsData = React.createContext()
 
 function App() {
   const [name, setName] = useState("");
@@ -15,6 +16,7 @@ function App() {
   const [position, setPosition] = useState("");
   const [salary, setSalary] = useState(0);
   const [Colnames, setColnames] = useState('');
+  const [rowsData, setRowsData] = useState('');
   //alert(Colnames)
 
   const butHandler = (() => {
@@ -40,10 +42,21 @@ function App() {
       let columnNames = theData.map((element) => {
          return element.COLUMN_NAME + ", ";
       });    
-      setColnames(columnNames)
-      //alert(Colnames)
-      //alert("COLUMN NAMES = " + columnNames);
-      //alert("columnNames[5] = " + columnNames[5]);
+      setColnames(columnNames)     
+   });                                                    
+});
+
+const but3Handler = ((rowValues) => {
+   console.log('but3Handler clicked')
+   axios.get('http://localhost:3001/allrows').then((response) => { 
+      console.log('button3Handler response ... ', response)
+      
+      const theData2 = response.data;       
+      let rowValues = theData2.map((element) => {
+         return element.name + ", ";   
+      });    
+       setRowsData(rowValues) 
+       alert(rowValues[0])    
    });                                                    
 });
       
@@ -66,13 +79,19 @@ return (
       <label>Salary: </label>
       <input type="number" onChange={(event) => { 
          setSalary(event.target.value);}} />
-      <button onClick={butHandler}>Add Employee</button>
-      <button onClick={but2Handler}>ColumnNames</button>
+      <div className="buttons">  
+         <button onClick={butHandler}>Add Employee</button>
+         <button onClick={but2Handler}>ColumnNames</button>
+         <button onClick={but3Handler}>Get All Rows</button>
+      </div> 
       </div> 
       
       <ColumnNames.Provider value={ Colnames }>                         
             <ComponentC />        
       </ColumnNames.Provider>
+      <RowsData.Provider value={ rowsData }>                         
+            <ComponentC />        
+      </RowsData.Provider>
     </div>
          )};
 
