@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  justify-content: center;
   font-size: 1.6rem;
 }
 input {
@@ -14,28 +14,24 @@ input {
   color: red;
   border: 1.5px solid black;
   border-radius: 12px;
-  margin-left: 100px;
   width: 350px;
   align-items: center;
   padding-left: 10px;
 }
 label{
   font-style: italic;
-  margin-left: 100px;
 }
-
 .buttons {
   display: flex;
   flex-direction: row;
   justify-content:space-around;
- 
+  background-color: lightgray;
   width: 700px;
   border: 2px solid darkblue;
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 20px;
 }
-
 button {         
    font-size: 1.3rem;
    width: 180px;
@@ -43,12 +39,10 @@ button {
    background-color: aqua;
    border: 2px solid black;
    border-radius: 1.5rem;
-   ;
 }
 button:hover {
   background-color: black;
   color: aqua;
   border: 2px solid aqua;
   cursor: pointer;
-
 }
