@@ -4,7 +4,7 @@ import './ComponentC.css';
 
 function ComponentC(){
   
-  const thecolumns = useContext(ColumnNames)
+  const thecolumns = useContext(ColumnNames) 
   const therows = useContext(RowsData)
 
   return (

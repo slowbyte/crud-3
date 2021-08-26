@@ -27,7 +27,7 @@ app.get("/columnnames", (req, res) => {
   const sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS " +
         "WHERE TABLE_SCHEMA = 'react_sql' AND TABLE_NAME = 'employees'" +
          " ORDER BY ORDINAL_POSITION";
-         console.log('sql = ', sql);
+         //console.log('sql = ', sql);
   db.query(sql, (err, result) => {
    if (err)
    {
@@ -48,7 +48,7 @@ app.get("/columnnames", (req, res) => {
 
 app.get("/allrows", (req, res) => {  
   const sql = "SELECT * FROM react_sql.employees";
-  console.log(sql);
+  //console.log(sql);
   db.query(sql, (err, result) => {
    if (err)
    {

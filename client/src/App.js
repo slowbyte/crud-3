@@ -17,7 +17,7 @@ function App() {
   const [salary, setSalary] = useState(0);
   const [Colnames, setColnames] = useState('');
   const [rowsData, setRowsData] = useState('');
-  //alert(Colnames)
+  
 
   const butHandler = (() => {
    //console.log(name,age,country,position,salary)
@@ -47,17 +47,38 @@ function App() {
 });
 
 const but3Handler = ((rowValues) => {
+   //var rowValues = '';
+   var finalResult =[];
    console.log('but3Handler clicked')
    axios.get('http://localhost:3001/allrows').then((response) => { 
-      console.log('button3Handler response ... ', response)
+      //console.log('button3Handler response ... ', response)
       
-      const theData2 = response.data;       
-      let rowValues = theData2.map((element) => {
-         return element.name + ", ";   
-      });    
-       setRowsData(rowValues) 
-       alert(rowValues[0])    
-   });                                                    
+      const theData2 = response.data;
+      let obj0 = theData2[0];
+      //alert(obj0) 
+      //alert(Object.values(obj0));  
+      let obj0Values = Object.values(obj0);  
+      //alert(obj0Values);
+      //alert(obj0Values[3]);
+
+      //begin map function......
+      let rowValues = theData2.map((element) => {            
+      //let rowValues = obj.map((element) => {
+      //return element.name + ", " //works
+       
+      finalResult = finalResult + Object.values(element) + "\r\n";
+      //alert(Object.values(element)); //element is an object here; and for each row of database this alert fires off
+      //alert( finalResult + "\r\n");
+      
+      return element + ", " //works
+       
+      }); 
+      //end of map function......  
+       alert(`${finalResult}`);
+       setRowsData([...finalResult]) // the 2nd useState is being set now...
+       //alert('rV = ' + Object.values(finalResult));    
+   });        
+                                              
 });
       
 return (
