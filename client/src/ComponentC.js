@@ -9,8 +9,8 @@ function ComponentC(){
 
   return (
       <div>
-         <container className='container'> {thecolumns}</container> 
-         <container className='rowscontainer'> {therows}</container>
+         <div className='container'> {thecolumns}</div> 
+         <div className='rowscontainer'> {therows}</div>
       </div>
   )}
 
