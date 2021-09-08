@@ -1,6 +1,6 @@
-import React, {useContext} from 'react';
+/*import React, {useContext} from 'react';
 import { ColumnNames, RowsData } from './App';
-import './ComponentC.css';
+import './Components.css';
 
 function ComponentC(){
   
@@ -15,5 +15,6 @@ function ComponentC(){
   )}
 
   export default ComponentC;
+  */
 
 

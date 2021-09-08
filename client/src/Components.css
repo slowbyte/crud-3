@@ -1,0 +1,26 @@
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 2rem;
+   
+    background-color: white;
+    color: black;
+    
+}
+.rowscontainer {
+    display: flex; 
+    flex-direction: column; 
+    
+    align-items: center;
+    width: 50rem;
+    padding: 30px;
+
+    margin-top: 20px;
+    font-size: 2rem;
+   
+    background-color: white;
+    color: black;
+}
