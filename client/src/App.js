@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 import {useState} from 'react';
 import axios from 'axios';
-import ComponentC from './ComponentC';
+import Columnnames from './Columnnames';
+import Allrows from './Allrows';
+//import ComponentC from './ComponentC';
 
 
 //export const UserContext = React.createContext() //stuff
@@ -17,7 +19,7 @@ let obj = {
    city: 'Bedminster'   
 };
 let aaa = Object.values(obj);
-alert(aaa);
+//alert(aaa);
 
 
 
@@ -58,10 +60,11 @@ alert(aaa);
 });
 
 const but3Handler = ((rowValues) => {
+   alert("trying Allrows.js")
    //var rowValues = '';
    var finalResult =[];
    console.log('but3Handler clicked')
-   axios.get('http://localhost:3001/allrows').then((response) => { 
+   axios.get('http://localhost:3001/').then((response) => { 
       console.log('button3Handler response', response.data); //this works
    
       const theData2 = response.data;
@@ -100,13 +103,16 @@ const but3Handler = ((rowValues) => {
        let array1 = response.data;
        alert('array1 data is ' + Object.values(array1)) ;
         
+        let indexNum = 0;
         let reslt = array1.map((element) => {
-             alert(Object.values(element));
+             alert(`${indexNum}  ${Object.values(element)}`);
+             indexNum++;
            return element;
           
        });   
 
        alert(`reslt = ${Object.values(reslt)}`);
+
        //alert('alert = ' + response.data[0].name)   ;  
        
        //===========================================
@@ -151,10 +157,10 @@ return (
       </div> 
       
       <ColumnNames.Provider value={ Colnames }>                         
-            <ComponentC />        
+            <Columnnames />        
       </ColumnNames.Provider>
       <RowsData.Provider value={ rowsData }>                         
-            <ComponentC />        
+            <Allrows />        
       </RowsData.Provider>
     </div>
          )};
